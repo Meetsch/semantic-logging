@@ -108,7 +108,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
             }
 
             // inspect all dlls which are not already loaded in the current domain.
-            var filesToInspect = Directory.EnumerateFiles(probingPath, "*.dll", SearchOption.TopDirectoryOnly).
+            var filesToInspect = Directory.EnumerateFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll", SearchOption.TopDirectoryOnly).
                                            Except(currentAssemblies.Select(a => a.Location), StringComparer.OrdinalIgnoreCase);
 
             // This will load external dll extensions in a separate domain so they can be unloaded
