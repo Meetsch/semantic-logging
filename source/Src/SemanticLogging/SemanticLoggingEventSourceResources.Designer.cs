@@ -10,7 +10,6 @@
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -20,7 +19,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class SemanticLoggingEventSourceResources {
@@ -41,7 +40,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Microsoft.Practices.EnterpriseLibrary.SemanticLogging.SemanticLoggingEventSourceR" +
-                            "esources", typeof(SemanticLoggingEventSourceResources).GetTypeInfo().Assembly);
+                            "esources", typeof(SemanticLoggingEventSourceResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
