@@ -13,8 +13,7 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure.Cosmos.Table;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks.WindowsAzureTableSinkFixture_Integration
 {

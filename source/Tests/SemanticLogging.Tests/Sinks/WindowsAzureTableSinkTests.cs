@@ -12,7 +12,7 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure.Cosmos.Table;
 using Newtonsoft.Json;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks
@@ -383,13 +383,13 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks
         {
         }
 
-        internal override Task<IList<TableResult>> ExecuteBatchAsync(TableBatchOperation batch)
+        internal override Task<TableBatchResult> ExecuteBatchAsync(TableBatchOperation batch)
         {
             SentEntriesCount += batch.Count;
             return Task.Run(() =>
             {
                 WaitHandle.Wait();
-                return (IList<TableResult>)new List<TableResult>();
+                return new TableBatchResult();
             });
         }
 

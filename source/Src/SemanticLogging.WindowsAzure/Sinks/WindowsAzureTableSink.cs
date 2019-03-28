@@ -10,9 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Properties;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.RetryPolicies;
-using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure.Cosmos.Table;
 using Guard = Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility.Guard;
 using WindowsAzureResources = Microsoft.Practices.EnterpriseLibrary.SemanticLogging.WindowsAzure.Properties.Resources;
 
@@ -163,7 +161,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
             this.bufferedPublisher.TryPost(value);
         }
 
-        internal virtual Task<IList<TableResult>> ExecuteBatchAsync(TableBatchOperation batch)
+        internal virtual Task<TableBatchResult> ExecuteBatchAsync(TableBatchOperation batch)
         {
             return this.table.ExecuteBatchAsync(batch, this.cancellationTokenSource.Token);
         }
